@@ -32,6 +32,19 @@ following token permissions:
 - `data.records:write`
 - `schema.bases:read`
 
+### Airtable BASE ID
+
+The id generally looks like this `appXXXXXXXXXXXXXX`
+
+### Others
+
+- [Get your Airtable Base ID](https://codeupify.com/blog/how-to-get-airtable-base-id), this is the id of the base you
+  want to
+  sync your Shopify products to, it generally looks like this `appXXXXXXXXXXXXXX`
+- Airtable Table Name - this is a URL encoded table name (e.g., `Test Table` becomes `Test%20Table`)
+- Shopify Shop Name - this is the name of your Shopify store, you can get it from the url of your Shopify store (e.g.,
+  `https://your-store-name.myshopify.com`)
+
 ## Installation
 
 1. Clone this repository:
@@ -53,9 +66,9 @@ following token permissions:
 
 4. Create a `.env` file in the root directory and add your credentials:
    ```
-   SHOPIFY_ACCESS_TOKEN=your_shopify_api_key
+   SHOPIFY_ACCESS_TOKEN=your_shopify_access_token
    SHOPIFY_SHOP_NAME=your_shop_name
-   AIRTABLE_API_KEY=your_airtable_api_key
+   AIRTABLE_PERSONAL_ACCESS_TOKEN=your_airtable_personal_access_token
    AIRTABLE_BASE_ID=your_airtable_base_id
    AIRTABLE_TABLE_NAME=Products
    ```

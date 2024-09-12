@@ -45,7 +45,7 @@ def sync_product_to_airtable(product):
 
     airtable_url = f"https://api.airtable.com/v0/{AIRTABLE_BASE_ID}/{AIRTABLE_TABLE_NAME}"
     headers = {
-        "Authorization": f"Bearer {AIRTABLE_API_KEY}",
+        "Authorization": f"Bearer {AIRTABLE_PERSONAL_ACCESS_TOKEN}",
         "Content-Type": "application/json"
     }
 

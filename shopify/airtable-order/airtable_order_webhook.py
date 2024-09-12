@@ -2,7 +2,6 @@ import os
 
 import requests
 from flask import Flask, request, jsonify
-from requests.auth import HTTPBasicAuth
 
 app = Flask(__name__)
 
@@ -10,7 +9,7 @@ SHOPIFY_ACCESS_TOKEN = os.environ.get('SHOPIFY_ACCESS_TOKEN')
 SHOPIFY_SHOP_NAME = os.environ.get('SHOPIFY_SHOP_NAME')
 SHOPIFY_API_VERSION = '2023-04'
 
-AIRTABLE_API_KEY = os.environ.get('AIRTABLE_API_KEY')
+AIRTABLE_PERSONAL_ACCESS_TOKEN = os.environ.get('AIRTABLE_PERSONAL_ACCESS_TOKEN')
 AIRTABLE_BASE_ID = os.environ.get('AIRTABLE_BASE_ID')
 AIRTABLE_TABLE_NAME = os.environ.get('AIRTABLE_TABLE_NAME', 'Orders')
 
@@ -46,7 +45,7 @@ def webhook():
 
         airtable_url = f"https://api.airtable.com/v0/{AIRTABLE_BASE_ID}/{AIRTABLE_TABLE_NAME}"
         headers = {
-            "Authorization": f"Bearer {AIRTABLE_API_KEY}",
+            "Authorization": f"Bearer {AIRTABLE_PERSONAL_ACCESS_TOKEN}",
             "Content-Type": "application/json"
         }
         airtable_response = requests.post(airtable_url, json=airtable_data, headers=headers)
