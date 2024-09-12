@@ -22,7 +22,7 @@ Before you begin, ensure you have met the following requirements:
 - A Shopify store with API access
 - An Airtable account and base set up
 
-### Shopify API Key
+### Shopify Access Token
 
 [Get your Shopify API Key](https://codeupify.com/blog/how-to-get-a-shopify-api-key) with the following API access scopes
 
@@ -37,6 +37,9 @@ following token permissions:
 
 - `data.records:write`
 - `schema.bases:read`
+
+[Get your Airtable Base ID](https://codeupify.com/blog/how-to-get-airtable-base-id) and a url encoded table name (ex:
+`Test Orders` becomes `Test%20Orders`)
 
 ## Installation
 

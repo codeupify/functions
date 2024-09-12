@@ -18,6 +18,8 @@ that is ready to run.
 - A Shopify store with API access
 - An Airtable account and base set up
 
+### Shopify Access Token
+
 [Get your Shopify API Key](https://codeupify.com/blog/how-to-get-a-shopify-api-key) with the following API access scopes
 
 - `read_products`
@@ -51,8 +53,7 @@ following token permissions:
 
 4. Create a `.env` file in the root directory and add your credentials:
    ```
-   SHOPIFY_API_KEY=your_shopify_api_key
-   SHOPIFY_PASSWORD=your_shopify_password
+   SHOPIFY_ACCESS_TOKEN=your_shopify_api_key
    SHOPIFY_SHOP_NAME=your_shop_name
    AIRTABLE_API_KEY=your_airtable_api_key
    AIRTABLE_BASE_ID=your_airtable_base_id

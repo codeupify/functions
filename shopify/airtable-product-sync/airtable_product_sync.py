@@ -2,12 +2,10 @@ import os
 
 import requests
 from flask import Flask, request, jsonify
-from requests.auth import HTTPBasicAuth
 
 app = Flask(__name__)
 
-SHOPIFY_API_KEY = os.environ.get('SHOPIFY_API_KEY')
-SHOPIFY_PASSWORD = os.environ.get('SHOPIFY_PASSWORD')
+SHOPIFY_ACCESS_TOKEN = os.environ.get('SHOPIFY_ACCESS_TOKEN')
 SHOPIFY_SHOP_NAME = os.environ.get('SHOPIFY_SHOP_NAME')
 SHOPIFY_API_VERSION = '2023-04'
 
@@ -18,7 +16,11 @@ AIRTABLE_TABLE_NAME = os.environ.get('AIRTABLE_TABLE_NAME', 'Products')
 
 def get_shopify_product(product_id):
     url = f"https://{SHOPIFY_SHOP_NAME}.myshopify.com/admin/api/{SHOPIFY_API_VERSION}/products/{product_id}.json"
-    response = requests.get(url, auth=HTTPBasicAuth(SHOPIFY_API_KEY, SHOPIFY_PASSWORD))
+    headers = {
+        "X-Shopify-Access-Token": SHOPIFY_ACCESS_TOKEN,
+        "Content-Type": "application/json"
+    }
+    response = requests.get(url, headers=headers)
     response.raise_for_status()
     return response.json()['product']
 

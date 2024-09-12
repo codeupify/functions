@@ -6,8 +6,7 @@ from requests.auth import HTTPBasicAuth
 
 app = Flask(__name__)
 
-SHOPIFY_API_KEY = os.environ.get('SHOPIFY_API_KEY')
-SHOPIFY_PASSWORD = os.environ.get('SHOPIFY_PASSWORD')
+SHOPIFY_ACCESS_TOKEN = os.environ.get('SHOPIFY_ACCESS_TOKEN')
 SHOPIFY_SHOP_NAME = os.environ.get('SHOPIFY_SHOP_NAME')
 SHOPIFY_API_VERSION = '2023-04'
 
@@ -22,7 +21,11 @@ def webhook():
         order_id = request.json['id']
 
         shopify_url = f"https://{SHOPIFY_SHOP_NAME}.myshopify.com/admin/api/{SHOPIFY_API_VERSION}/orders/{order_id}.json"
-        shopify_response = requests.get(shopify_url, auth=HTTPBasicAuth(SHOPIFY_API_KEY, SHOPIFY_PASSWORD))
+        headers = {
+            "X-Shopify-Access-Token": SHOPIFY_ACCESS_TOKEN,
+            "Content-Type": "application/json"
+        }
+        shopify_response = requests.get(shopify_url, headers=headers)
         shopify_response.raise_for_status()
         order = shopify_response.json()['order']
 
