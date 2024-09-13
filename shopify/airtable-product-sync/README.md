@@ -11,7 +11,8 @@ the changes are immediately reflected in your Airtable base.
 
 ## Prerequisites
 
-NOTE: This script uses Flask for a local setup. The code is also available on [codeupify.com] as a serverless function
+NOTE: This script uses Flask for a local setup. The code is also available
+on [codeupify.com](https://codeupify.com/f/yMYerkEaOB) as a serverless function
 that is ready to run.
 
 - Python 3.7 or higher installed on your local machine
