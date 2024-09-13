@@ -51,7 +51,7 @@ following token permissions:
 1. Clone this repository:
    ```
    git clone https://github.com/codeupify/functions.git
-   cd shopify/airtable-order
+   cd functions/shopify/airtable-order-integration
    ```
 
 2. Create a virtual environment and activate it:
@@ -77,7 +77,7 @@ following token permissions:
 # Configuration
 
 1. In your Airtable base, create a table named "Orders" with the following fields:
-    - Order ID (Number)
+    - Order Number (Text)
     - Order Date (Date)
     - Total Price (Number)
     - Customer Name (Text)
@@ -95,7 +95,7 @@ following token permissions:
 
 1. Start the Flask server:
    ```
-   python airtable_order_webhook.py
+   python airtable_order_integration.py
    ```
 
 2. The server will start running on the specified port (default is 3000).

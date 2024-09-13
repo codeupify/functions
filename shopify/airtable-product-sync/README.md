@@ -29,12 +29,9 @@ that is ready to run.
 [Get your Airtable Personal Access Token](https://codeupify.com/blog/get-an-airtable-personal-access-token) with the
 following token permissions:
 
+- `data.records:read`
 - `data.records:write`
 - `schema.bases:read`
-
-### Airtable BASE ID
-
-The id generally looks like this `appXXXXXXXXXXXXXX`
 
 ### Others
 
@@ -50,7 +47,7 @@ The id generally looks like this `appXXXXXXXXXXXXXX`
 1. Clone this repository:
    ```
    git clone https://github.com/codeupify/functions.git
-   cd shopify/airtable-product-sync
+   cd functions/shopify/airtable-product-sync
    ```
 
 2. Create a virtual environment and activate it:
@@ -61,7 +58,7 @@ The id generally looks like this `appXXXXXXXXXXXXXX`
 
 3. Install the required dependencies:
    ```
-   pip install Flask requests
+   pip install Flask requests python-dotenv
    ```
 
 4. Create a `.env` file in the root directory and add your credentials:
@@ -76,7 +73,7 @@ The id generally looks like this `appXXXXXXXXXXXXXX`
 ## Configuration
 
 1. In your Airtable base, create a table named "Products" with the following fields:
-    - Product ID (Number)
+    - Product ID (Text)
     - Title (Text)
     - Description (Long text)
     - Vendor (Text)
