@@ -14,7 +14,7 @@ products purchased.
 ## Prerequisites
 
 NOTE: This script uses Flask for a local setup. The code is also available
-on [codeupify.com](https://codeupify.com/f/gl9av2maG1) as a serverless function
+on [codeupify.com](https://codeupify.com/f/yMYerkEaOB) as a serverless function
 that is ready to run.
 
 Before you begin, ensure you have met the following requirements:
